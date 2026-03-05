@@ -1,4 +1,4 @@
-node('java dev') {
+node('java&&dev') {
   stage('Get git repo') {
     // en las scripted se debe indicar para que se traiga el resto del repositorio
     git branch: 'main', url: 'https://github.com/framvaq/apasoft-jenkins-scripted1'
@@ -22,7 +22,7 @@ node('java dev') {
   }
 }
 
-node('java pro') {
+node('java&&pro') {
   stage('Deploy') {
     // unpack artifact
     unstash 'target-jar'
