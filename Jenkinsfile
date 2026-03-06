@@ -16,7 +16,7 @@ node('java&&dev') {
 
   stage('Run') {
     echo 'Run'
-    sh 'mvn exec:java -Dexec.mainClass="com.apasoft.CardProcessor" -Dexec args="4111111111111111"'
+    sh 'mvn exec:java -Dexec.mainClass="com.apasoft.CardProcessor" -Dexec.args="4111111111111111"'
     // to send to another node
     stash includes: 'target/**', name: 'target-jar'
   }
